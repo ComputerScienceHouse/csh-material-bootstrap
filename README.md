@@ -5,6 +5,7 @@ A material theme for [Bootstrap](http://getbootstrap.com) for use on [Computer S
 
 Usage
 ------
+You can choose to install this package with Bower, or simply download the current version of the stylesheet. In both cases, you must still include Bootstrap's JavaScript file to have functional dropdowns, modals, etc.
 
 #### Installation with Bower
 CSH Material Bootstrap is available via Bower. Simply run the following command to add the package to your project:
@@ -14,14 +15,14 @@ bower install --save csh-material-bootstrap
 ```
 
 #### Manual Installation
-Download `dist/csh-material-bootstrap.min.css` and replace Bootstrap's default stylesheet. You must still include Bootstrap's JavaScript file to have functional dropdowns, modals, etc.
+Download `dist/csh-material-bootstrap.min.css` and replace Bootstrap's default stylesheet.
 
-You can import a theme into your styles using SASS.
+You can also import the theme into your styles using SASS.
 
 ```
-@import "csh-material-bootstrap/variables";
+@import "csh-material-bootstrap/sass/variables";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
-@import "csh-material-bootstrap/csh-material-bootstrap";
+@import "csh-material-bootstrap/sass/csh-material-bootstrap";
 ```
 
 Development
