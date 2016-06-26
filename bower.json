@@ -9,12 +9,10 @@
   },
   "license": "MIT",
   "ignore": [
-    "bower_components",
     ".gitignore",
     "Gruntfile.js",
     "index.html",
-    "package.json",
-    "*/index.html"
+    "package.json"
   ],
   "devDependencies": {
     "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
