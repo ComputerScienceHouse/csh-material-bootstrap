@@ -16,9 +16,15 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
 
   &-brand {
     font-size: 24px;
+    padding-left: 60px;
+    background: $navbar-default-logo 11px 11px/40px 40px no-repeat;
   }
 
   &-inverse {
+    .navbar-brand {
+      background-image: $navbar-inverse-logo;
+    }
+
     .navbar-form {
 
       input[type=text],
