@@ -415,9 +415,9 @@ $navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
 $navbar-inverse-brand-hover-color:          #fff !default;
 $navbar-inverse-brand-hover-bg:             transparent !default;
 
-// Inverted navbar toggle\
+// Inverted navbar toggle
 $navbar-inverse-toggle-hover-bg:            transparent !default;
-$navbar-inverse-toggle-icon-bar-bg:         rgba(0,0,0,0.5) !default;
+$navbar-inverse-toggle-icon-bar-bg:         $navbar-inverse-link-hover-color !default;
 $navbar-inverse-toggle-border-color:        transparent !default;
 
 
