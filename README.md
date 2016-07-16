@@ -7,6 +7,13 @@ Usage
 ------
 You can choose to install this package with Bower, or simply download the current version of the stylesheet. In both cases, you must still include Bootstrap's JavaScript file to have functional dropdowns, modals, etc.
 
+#### Installation with NPM
+CSH Material Bootstrap is available via NPM. Simply run the following command to add the package to your project:
+
+```
+npm install --save csh-material-bootstrap
+```
+
 #### Installation with Bower
 CSH Material Bootstrap is available via Bower. Simply run the following command to add the package to your project:
 
