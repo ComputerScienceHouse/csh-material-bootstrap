@@ -5,12 +5,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         buildDir: 'dist',
-        outputFile: '<%= buildDir %>/csh-material-bootstrap.min.css',
+        outputFile: '<%= buildDir %>/css/csh-material-bootstrap.min.css',
         banner: '/*!\n' +
         ' * <%= pkg.name %> v<%= pkg.version %>\n' +
         ' * Homepage: <%= pkg.homepage %>\n' +
@@ -20,7 +21,7 @@ module.exports = function (grunt) {
         '*/\n',
         clean: {
             all: {
-                src: ['sass/build.scss', '<%= outputFile %>*']
+                src: ['sass/build.scss', '<%= outputFile %>*', '<%= buildDir %>/fonts/*']
             },
             build: {
                 src: ['sass/build.scss']
@@ -77,6 +78,14 @@ module.exports = function (grunt) {
                 src: '<%= outputFile %>'
             }
         },
+        copy: {
+            fonts: {
+                expand: true,
+                cwd: 'bower_components/bootstrap-sass/assets',
+                src: 'fonts/**',
+                dest: '<%= buildDir %>'
+            }
+        },
         watch: {
             files: ['sass/csh-material-bootstrap.scss', 'sass/variables.scss', 'index.html'],
             tasks: 'build',
@@ -104,7 +113,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('build', ['clean:all', 'concat', 'sass:dist', 'postcss', 'clean:build']);
+    grunt.registerTask('build', ['clean:all', 'concat', 'sass:dist', 'postcss', 'clean:build', 'copy:fonts']);
 
     grunt.event.on('watch', function (action) {
         var path = require('path');
