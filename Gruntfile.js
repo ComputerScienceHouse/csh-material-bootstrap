@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         buildDir: 'dist',
-        outputFile: '<%= buildDir %>/css/csh-material-bootstrap.min.css',
+        outputFile: '<%= buildDir %>/css/csh-material-bootstrap.css',
         banner: '/*!\n' +
         ' * <%= pkg.name %> v<%= pkg.version %>\n' +
         ' * Homepage: <%= pkg.homepage %>\n' +
