@@ -45,6 +45,7 @@ module.exports = function (grunt) {
                 options: {
                     style: 'expanded',
                     precision: 8,
+                    bundleExec: true,
                     'unix-newlines': true
                 }
             }

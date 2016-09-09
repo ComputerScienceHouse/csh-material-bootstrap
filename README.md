@@ -34,16 +34,18 @@ You can also import the theme into your styles using SASS.
 
 Development
 ------------
-You must have Node + NPM, Grunt CLI, and Bower installed. 
+You must have Node + NPM, Grunt CLI, Bower, and Ruby + Bundler installed. 
 
 * To install Grunt CLI, run: `npm install -g grunt-cli`
 * To install Bower, run: `npm install -g bower`
+* To install Bundler, run: `gem install bundler`
 
 Once you have those tools installed, clone this repo and run the following commands to install dependencies:
 
 ```
 npm install
 bower install
+bundle install
 ```
 
 Once all of the dependencies are installed, run `grunt build` to build the theme (artifacts will be dropped in `./dist`), or simply `grunt` to start a live reload server for development.
