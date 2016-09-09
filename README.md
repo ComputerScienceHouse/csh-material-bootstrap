@@ -34,7 +34,12 @@ You can also import the theme into your styles using SASS.
 
 Development
 ------------
-You must have Node and Grunt CLI installed. To install Grunt CLI, run: `npm install -g grunt-cli`. Once you have those tools installed, clone this repo and run the following commands to install dependencies:
+You must have Node + NPM, Grunt CLI, and Bower installed. 
+
+* To install Grunt CLI, run: `npm install -g grunt-cli`
+* To install Bower, run: `npm install -g bower`
+
+Once you have those tools installed, clone this repo and run the following commands to install dependencies:
 
 ```
 npm install
