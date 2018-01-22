@@ -4,3 +4,10 @@ pipeline:
     commands:
       - yarn
       - yarn build
+
+  deploy:
+    image: node:8.9.4
+    commands:
+      - yarn deploy
+    when:
+      branch: master

@@ -19,7 +19,8 @@
   "sass": "src/csh-material-bootstrap.scss",
   "scripts": {
     "build": "node tools/build.js",
-    "start": "node tools/build.js --watch"
+    "start": "node tools/build.js --watch",
+    "deploy": "node tools/deploy.js"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -28,15 +29,18 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
+    "aws-sdk": "^2.183.0",
     "chalk": "^2.3.0",
     "chokidar": "^2.0.0",
     "cssnano": "^3.10.0",
+    "fs-extra": "^5.0.0",
+    "globby": "^7.1.1",
+    "mime-types": "^2.1.17",
     "node-sass": "^4.7.2",
     "ora": "^1.3.0",
     "postcss": "^6.0.16",
     "postcss-cli": "^4.1.1",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "rimraf": "^2.6.2",
     "shelljs": "^0.8.0",
     "yargs": "^10.1.1",
     "bootstrap": "4.0.0-beta.3",

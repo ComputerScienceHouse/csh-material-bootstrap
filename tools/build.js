@@ -1,8 +1,8 @@
 const path = require('path');
+const fs = require('fs-extra');
 const shell = require('shelljs');
 const chalk = require('chalk');
 const chokidar = require('chokidar');
-const rimraf = require('rimraf');
 const spinner = require('ora')();
 const version = require('../package.json').version;
 
@@ -38,15 +38,6 @@ function exec(command) {
   ));
 }
 
-function clean(glob) {
-  return new Promise((resolve, reject) => rimraf(glob, {}, (error) => {
-    if (error) {
-      return reject(error);
-    }
-    resolve();
-  }));
-}
-
 function fail(error, message) {
   spinner.fail(chalk.bold.red(`${message}\n${error}`));
   shell.exit(1);
@@ -55,7 +46,7 @@ function fail(error, message) {
 async function build() {
   try {
     spinner.start('Clean Build Artifacts');
-    await clean(config.dist);
+    await fs.remove(config.dist);
     spinner.succeed(chalk.green(spinner.text));
 
     spinner.start('Compile SCSS to CSS');
