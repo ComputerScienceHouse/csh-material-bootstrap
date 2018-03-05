@@ -4,10 +4,10 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 const chokidar = require('chokidar');
 const spinner = require('ora')();
-const version = require('../package.json').version;
+const metadata = require('../package.json');
 
 const args = require('yargs')
-  .version(version)
+  .version(metadata.version)
   .usage(
     `Usage:
 $0 [OPTIONS] [--watch]`
@@ -23,7 +23,7 @@ $0 [OPTIONS] [--watch]`
 const config = {
   root: path.resolve(__dirname, '..'),
   src: path.resolve(__dirname, '../src'),
-  entrypoint: path.resolve(__dirname, '../src/csh-material-bootstrap.scss'),
+  entrypoint: path.resolve(__dirname, '../', metadata.sass),
   dist: path.resolve(__dirname, '../dist/')
 };
 
