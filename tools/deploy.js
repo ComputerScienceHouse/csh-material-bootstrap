@@ -8,11 +8,10 @@ const chalk = require('chalk');
 const spinner = require('ora')();
 const metadata = require('../package.json');
 
-aws.config.update({
+const s3 = new aws.S3({
   s3ForcePathStyle: true,
   endpoint: 'https://s3.csh.rit.edu'
 });
-const s3 = new aws.S3();
 
 const config = {
   root: path.resolve(__dirname, '..'),
@@ -22,9 +21,31 @@ const config = {
     'src/*'
   ],
   bucket: metadata.name,
+  region: '',
   dest: metadata.version,
   acl: 'public-read'
 };
+
+async function ensureBucket() {
+  const params = {
+    Bucket: config.bucket
+  };
+
+  return s3.headBucket(params).promise()
+    .catch(err => {
+      if (err.code == 'NoSuchBucket' || err.code == 'NotFound') {
+        // Bucket does not exist, create it
+        params.CreateBucketConfiguration = {
+          LocationConstraint: config.region
+        };
+
+        return s3.createBucket(params).promise();
+      }
+
+      // Unhandled error
+      throw err;
+    });
+}
 
 function upload(srcPath, destPath) {
   return fs.readFile(srcPath)
@@ -48,6 +69,10 @@ function upload(srcPath, destPath) {
 async function deploy() {
   const uploaders = [];
 
+  // Ensure the upload bucket exists
+  await ensureBucket();
+
+  // Upload each artifact to the bucket
   for (let artifact of config.artifacts) {
     const filenames = await globby(path.resolve(config.root, artifact));
 
@@ -71,7 +96,7 @@ function fail(error, message) {
   if (typeof error === 'string') {
     spinner.fail(chalk.bold.red(error));
   } else {
-    spinner.fail(chalk.bold.red(`${message}\n${error}`))
+    spinner.fail(chalk.bold.red(`${message}\n${error}${error.code ? ": " + error.code : ""}`))
   }
 
   shell.exit(1);
