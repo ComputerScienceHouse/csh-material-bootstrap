@@ -734,3 +734,13 @@ input[type="checkbox"],
     }
   }
 }
+
+// Identification ==============================================================
+
+.theme-cdn::after {
+  content: $theme-cdn;
+}
+
+.theme-name::after {
+  content: $theme-name;
+}
