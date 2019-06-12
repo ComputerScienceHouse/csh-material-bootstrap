@@ -1,7 +1,7 @@
 {
   "name": "csh-material-bootstrap",
   "description": "A material design Bootstrap theme for Computer Science House.",
-  "version": "4.0.0",
+  "version": "4.3.1",
   "author": "Computer Science House",
   "homepage": "https://csh.rit.edu",
   "license": "MIT",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "aws-sdk": "^2.183.0",
-    "bootstrap": "4.0.0",
-    "bootswatch": "4.0.0",
+    "bootstrap": "4.3.1",
+    "bootswatch": "4.3.1",
     "chalk": "^2.3.0",
     "chokidar": "^2.0.0",
     "cssnano": "^3.10.0",
