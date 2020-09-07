@@ -1,12 +1,12 @@
 pipeline:
   build:
-    image: node:8.9.4
+    image: node:12.18.3
     commands:
       - yarn
       - yarn build
 
   deploy:
-    image: node:8.9.4
+    image: node:12.18.3
     commands:
       - yarn deploy
     secrets: [ aws_access_key_id, aws_secret_access_key ]
