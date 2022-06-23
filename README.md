@@ -50,7 +50,7 @@ Use CSH Material Bootstrap without a package manager.
 
 Development
 ------------
-You must have [Node 6 or higher](https://nodejs.org) and NPM or [Yarn](https://yarnpkg.com) installed.
+You must have [Node 16 or higher](https://nodejs.org) and NPM or [Yarn](https://yarnpkg.com) installed.
 
 Once you have those tools installed, clone this repo and run the following command to install dependencies:
 

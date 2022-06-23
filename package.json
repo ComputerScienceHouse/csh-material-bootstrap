@@ -1,7 +1,7 @@
 {
   "name": "csh-material-bootstrap",
   "description": "A material design Bootstrap theme for Computer Science House.",
-  "version": "4.5.2",
+  "version": "4.6.1",
   "author": "Computer Science House <webmaster@csh.rit.edu>",
   "homepage": "https://csh.rit.edu",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "url": "https://github.com/ComputerScienceHouse/csh-material-bootstrap/issues"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "style": "dist/csh-material-bootstrap.css",
   "sass": "src/csh-material-bootstrap.scss",
@@ -24,23 +24,24 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "aws-sdk": "^2.747.0",
-    "bootstrap": "^4.5.2",
-    "bootswatch": "^4.5.2",
+    "autoprefixer": "^10.4.7",
+    "aws-sdk": "^2.1160.0",
+    "bootstrap": "^4.6.1",
+    "bootswatch": "^4.6.1",
     "chalk": "^4.1.0",
-    "chokidar": "^3.4.2",
-    "cssnano": "^4.1.10",
-    "fs-extra": "^9.0.1",
-    "globby": "^11.0.1",
-    "mime-types": "^2.1.27",
-    "node-sass": "^4.14.1",
+    "chokidar": "^3.5.3",
+    "cssnano": "^5.1.12",
+    "fs-extra": "^10.1.0",
+    "globby": "^13.1.2",
+    "mime-types": "^2.1.35",
+    "popper.js": "^1.16.1",
+    "node-sass": "^7.0.1",
     "ora": "^5.1.0",
-    "postcss": "^7.0.32",
-    "postcss-cli": "^7.1.2",
-    "postcss-flexbugs-fixes": "^4.2.1",
-    "shelljs": "^0.8.4",
-    "yargs": "^15.4.1"
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "shelljs": "^0.8.5",
+    "yargs": "^17.5.1"
   },
   "files": [
     "dist/",
