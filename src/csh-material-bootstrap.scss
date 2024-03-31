@@ -768,12 +768,72 @@ select.form-control {
   }
 }
 
+// THEME INDICATOR ===============
+
+#theme-indicator {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: var(--dark);
+}
 
 // DARK THEME =============================
 
 .dark-theme {
-  body {
-    background-color: rgb(34, 34, 34);
-    color: #eee;
+  background-color: rgb(34, 34, 34);
+  color: #eee;
+}
+.dark-theme * {
+  
+  --secondary: #aaa;
+  --light: #eee;
+
+  #theme-indicator {
+    fill: var(--light);
+    
   }
+  
+  .bg-secondary {
+      background-color: #444 !important;
+  }
+
+  .jumbotron {
+      background-color: rgb(43, 43, 43);
+  }
+
+  tr:not([class]),
+  tr.table-active,
+  tr:not([class]):hover,
+  tr.table-active:hover {
+      color: #eee;
+  }
+
+  .form-control::placeholder, .form-control-plaintext {
+      color: #666;
+  }
+  
+  .text-muted {
+      color: #aaa !important; 
+  }
+  
+  .modal-content {
+      background-color: #262626;
+  }
+  
+  .toast-body {
+      color: #444;
+  }
+  
+  .card:not(.text-white) {
+      color: #444;
+  }
+  
+  .nav-tabs .nav-link  {
+      color: #aaa;
+  }
+  
+  .btn-secondary.disabled {
+      color: #555;
+  }
+  
 }

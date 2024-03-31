@@ -6,10 +6,10 @@ RUN . ~/.nvm/nvm.sh install 13
 RUN . ~/.nvm/nvm.sh use 13
 RUN apt update
 RUN apt install -y python2
-RUN python2 -v
+WORKDIR /app
+COPY package.json .
+RUN yarn
 
 FROM base AS build
 WORKDIR /app
-COPY package.json .
-RUN npm install
 COPY . .
