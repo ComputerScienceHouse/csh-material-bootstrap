@@ -1,13 +1,13 @@
 {
   "name": "csh-material-bootstrap",
   "description": "A material design Bootstrap theme for Computer Science House.",
-  "version": "4.6.2",
+  "version": "5.3.8",
   "author": "Computer Science House <webmaster@csh.rit.edu>",
   "homepage": "https://csh.rit.edu",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ComputerScienceHouse/csh-material-bootstrap.git"
+    "url": "git+https://github.com/ComputerScienceHouse/csh-material-bootstrap.git"
   },
   "bugs": {
     "url": "https://github.com/ComputerScienceHouse/csh-material-bootstrap/issues"
@@ -18,32 +18,24 @@
   "style": "dist/csh-material-bootstrap.css",
   "sass": "src/csh-material-bootstrap.scss",
   "scripts": {
-    "build": "node tools/build.js",
-    "start": "node tools/build.js --watch",
-    "deploy": "node tools/deploy.js"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "aws-sdk": "^2.747.0",
-    "bootstrap": "^5.0.0",
-    "bootswatch": "^4.5.2",
-    "chalk": "^4.1.0",
-    "chokidar": "^3.4.2",
-    "cssnano": "^7.0.6",
-    "fs-extra": "^9.0.1",
-    "globby": "^11.0.1",
-    "mime-types": "^2.1.27",
-    "ora": "^5.1.0",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^11.0.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "sass": "^1.79.0",
-    "shelljs": "^0.8.4",
-    "yargs": "^15.4.1"
+    "css": "npm-run-all css-compile css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources -I node_modules --no-error-css src/:dist/css/",
+    "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
+    "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
+    "css-lint-vars": "fusv scss/ site/src/scss/",
+    "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
+    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\""
   },
   "files": [
-    "dist/",
-    "src/"
+    "dist/{css,js}/*.{css,js,map}",
+    "src/scss/**/*.scss"
   ],
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "npm-run-all2": "^8.0.4",
+    "sass": "^1.98.0"
+  }
 }
