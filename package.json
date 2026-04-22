@@ -18,13 +18,15 @@
   "style": "dist/csh-material-bootstrap.css",
   "sass": "src/csh-material-bootstrap.scss",
   "scripts": {
+    "compile": "npm-run-all --aggregate-output --parallel css js",
     "css": "npm-run-all css-compile css-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources -I node_modules --no-error-css src/:dist/css/",
     "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
     "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
     "css-lint-vars": "fusv scss/ site/src/scss/",
     "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
-    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\""
+    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
+    "js": "mkdir -p dist/js && cp src/color-modes.js dist/js/color-modes.js"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
