@@ -15,6 +15,7 @@
   "engines": {
     "node": ">=12"
   },
+  "type": "module",
   "exports": {
     ".": {
       "sass": "./src/csh-material-bootstrap.scss",
@@ -22,14 +23,13 @@
       "css": "dist/css/csh-material-bootstrap.min.css"
     },
     "./css": {
-      ".": "./src/csh-material-bootstrap.scss",
+      ".": "dist/css/csh-material-bootstrap.min.css",
       "sass": "./src/csh-material-bootstrap.scss",
       "style": "dist/css/csh-material-bootstrap.min.css",
       "css": "dist/css/csh-material-bootstrap.min.css"
-    }
+    },
+    "./color-modes.js": "./dist/js/color-modes.js"
   },
-  "style": "dist/css/csh-material-bootstrap.css",
-  "sass": "src/csh-material-bootstrap.scss",
   "scripts": {
     "compile": "npm-run-all --aggregate-output --parallel css js",
     "css": "npm-run-all css-compile css-minify",

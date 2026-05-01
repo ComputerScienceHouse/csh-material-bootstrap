@@ -4,7 +4,7 @@
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */
 
-(() => {
+export default (() => {
   'use strict'
 
   const getStoredTheme = () => localStorage.getItem('theme')
