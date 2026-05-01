@@ -17,7 +17,7 @@
   },
   "exports": {
     ".": {
-      "sass": "src/csh-material-bootstrap.scss"
+      "sass": "./src/csh-material-bootstrap.scss"
     }
   },
   "style": "dist/css/csh-material-bootstrap.css",
