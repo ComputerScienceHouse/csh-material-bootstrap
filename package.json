@@ -18,8 +18,7 @@
   "exports": {
     ".": {
       "sass": "src/csh-material-bootstrap.scss"
-    },
-    "css": "./dist/css/csh-material-bootstrap.min.css"
+    }
   },
   "style": "dist/css/csh-material-bootstrap.css",
   "sass": "src/csh-material-bootstrap.scss",
@@ -36,7 +35,7 @@
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
-    "src/scss/**/*.scss"
+    "src/**/*.scss"
   ],
   "dependencies": {
     "bootstrap": "^5.3.8"
