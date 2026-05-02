@@ -30,39 +30,37 @@
   setTheme(getPreferredTheme())
 
   const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme')
+    const themeSwitchers = document.querySelectorAll('.bd-theme, #bd-theme')
 
-    if (!themeSwitcher) {
-      return
-    }
+    for (const themeSwitcher of themeSwitchers.values()) {
+      const themeSwitcherText = themeSwitcher.querySelector('.bd-theme-text, #bd-theme-text')
+      const activeThemeIcon = themeSwitcher.querySelector('.theme-icon-active')
+      const btnToActive = themeSwitcher.querySelector(`[data-bs-theme-value="${theme}"]`)
+      const svgOfActiveBtn = btnToActive.querySelector('svg use')
+      const iconOfActiveBtn = btnToActive.querySelector('i.bi');
 
-    const themeSwitcherText = document.querySelector('#bd-theme-text')
-    const activeThemeIcon = document.querySelector('.theme-icon-active')
-    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use')
-    const iconOfActiveBtn = btnToActive.querySelector('i.bi');
+      themeSwitcher.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+        element.classList.remove('active')
+        element.setAttribute('aria-pressed', 'false')
+      })
 
-    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-      element.classList.remove('active')
-      element.setAttribute('aria-pressed', 'false')
-    })
+      btnToActive.classList.add('active')
+      btnToActive.setAttribute('aria-pressed', 'true')
+      if (svgOfActiveBtn) {
+        activeThemeIcon.querySelector("use").setAttribute('href', svgOfActiveBtn.getAttribute('href'))
+      } else if (iconOfActiveBtn) {
+        const iconClass = iconOfActiveBtn.classList.values().filter(cl => cl.includes("bi-")).next().value;
+        const oldIconClass = activeThemeIcon.classList.values().filter(cl => cl.includes("bi-")).next().value;
 
-    btnToActive.classList.add('active')
-    btnToActive.setAttribute('aria-pressed', 'true')
-    if (svgOfActiveBtn) {
-      activeThemeIcon.querySelector("use").setAttribute('href', svgOfActiveBtn.getAttribute('href'))
-    } else if (iconOfActiveBtn) {
-      const iconClass = iconOfActiveBtn.classList.values().filter(cl => cl.includes("bi-")).next().value;
-      const oldIconClass = activeThemeIcon.classList.values().filter(cl => cl.includes("bi-")).next().value;
-      
-      activeThemeIcon.classList.remove(oldIconClass);
-      activeThemeIcon.classList.add(iconClass);
-    }
-    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+        activeThemeIcon.classList.remove(oldIconClass);
+        activeThemeIcon.classList.add(iconClass);
+      }
+      const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+      themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
-    if (focus) {
-      themeSwitcher.focus()
+      if (focus) {
+        themeSwitcher.focus()
+      }
     }
   }
 

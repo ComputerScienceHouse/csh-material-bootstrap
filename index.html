@@ -45,8 +45,8 @@
           </li>
         </ul>
 
-        <div class="nav-item dropdown ms-auto">
-          <a href="#" id="bd-theme" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
+        <div id="bd-theme" class="nav-item dropdown ms-auto">
+          <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
             aria-haspopup="true" aria-expanded="false">
             <i class="theme-icon-active bi bi-circle-half"></i>
             <span id="bd-theme-text">
@@ -85,7 +85,7 @@
           <div class="col-sm-6">
             <h2>Installation</h2>
             <p>Recommended for modern web applications.</p>
-            <pre><code class="shell">npm install csh-material-bootstrap@4.5.2</code></pre>
+            <pre><code class="shell">npm install csh-material-bootstrap@5.3.8</code></pre>
           </div>
           <div class="col-sm-6">
             <h2>CDN</h2>
@@ -93,10 +93,11 @@
 
             <h5>CSS</h5>
             <pre><code class="html">&lt;link rel="stylesheet"
-                href="https://s3.csh.rit.edu/csh-material-bootstrap/4.5.2/dist/csh-material-bootstrap.min.css"
+                href="https://s3.csh.rit.edu/csh-material-bootstrap/5.3.8/dist/css/csh-material-bootstrap.min.css"
                 media="screen"&gt;</code></pre>
 
             <h5>JS, Popper.js, and jQuery</h5>
+            <p class="alert alert-warning">NOTE: this section has not been update yet</p>
             <p>Required for most interactive functionality, unless using an alternative implementation such as <a
                 href="http://reactstrap.github.io" rel="nofollow">Reactstrap</a>.</p>
             <pre><code class="html">&lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -111,6 +112,53 @@
           </div>
         </div>
       </div>
+
+      <hr />
+
+      <!-- Theme switchers -->
+      <h2 class="my-3">Theme switchers</h2>
+
+      <p>
+        To use theme switching, include the <code>color-modes.js</code>
+        script in your website or include it from the node package.
+      </p>
+
+      <pre><code class="html">&lt;script src="https://s3.csh.rit.edu/csh-material-bootstrap/5.3.8/dist/css/csh-material-bootstrap.min.css" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+
+      <p>or</p>
+
+      <pre><code class="js">import 'csh-material-bootstrap/color-modes';</code></pre>
+
+      <p>
+        You can use either <a href="https://icons.getbootstrap.com/#install">bootstrap icons</a> 
+        or svg icons, the script will work with both.
+      </p>
+
+      <div class="bd-theme nav-item dropdown ms-auto">
+        <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="theme-icon-active bi bi-circle-half"></i>
+          <span class="bd-theme-text">
+            Change Theme
+          </span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="bd-theme">
+          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="light">
+            <i class="bi bi-sun-fill"></i>
+            Light
+          </button>
+          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="dark">
+            <i class="bi bi-moon-fill"></i>
+            Dark
+          </button>
+          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="auto">
+            <i class="bi bi-circle-half"></i>
+            Auto
+          </button>
+        </ul>
+      </div>
+
+      <hr />
 
       <!-- Navbars -->
       <h2 class="my-3">Navbars</h2>
