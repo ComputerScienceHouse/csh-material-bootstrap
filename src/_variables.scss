@@ -1,9 +1,12 @@
 // @import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/functions";
 
-$purple:  #b0197e !default;
-$pink:    #e11c52 !default;
+$purple: #b0197e;
+$pink: #e11c52;
 
 $pink-600: mix(#fff, $pink, 20%);
 
-$primary:       $purple !default;
-$secondary:     $pink-600 !default;
+$primary: $purple;
+$secondary: $pink-600;
+
+// $primary-border-subtle-dark: tint-color($primary, 30%);

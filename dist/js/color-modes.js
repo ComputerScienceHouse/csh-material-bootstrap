@@ -37,9 +37,10 @@
     }
 
     const themeSwitcherText = document.querySelector('#bd-theme-text')
-    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+    const svgOfActiveBtn = btnToActive.querySelector('svg use')
+    const iconOfActiveBtn = btnToActive.querySelector('i.bi');
 
     document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
       element.classList.remove('active')
@@ -48,7 +49,15 @@
 
     btnToActive.classList.add('active')
     btnToActive.setAttribute('aria-pressed', 'true')
-    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+    if (svgOfActiveBtn) {
+      activeThemeIcon.querySelector("use").setAttribute('href', svgOfActiveBtn.getAttribute('href'))
+    } else if (iconOfActiveBtn) {
+      const iconClass = iconOfActiveBtn.classList.values().filter(cl => cl.includes("bi-")).next().value;
+      const oldIconClass = activeThemeIcon.classList.values().filter(cl => cl.includes("bi-")).next().value;
+      
+      activeThemeIcon.classList.remove(oldIconClass);
+      activeThemeIcon.classList.add(iconClass);
+    }
     const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
     themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
