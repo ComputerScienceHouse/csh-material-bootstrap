@@ -133,29 +133,61 @@
         You can use either <a href="https://icons.getbootstrap.com/#install">bootstrap icons</a> 
         or svg icons, the script will work with both.
       </p>
+      
+      <p class="mb-1">
+        In a navbar
+      </p>
+      <div class="bg-primary p-3">
+        <div class="bd-theme nav-item dropdown ms-auto">
+          <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="theme-icon-active bi bi-circle-half"></i>
+            <span class="bd-theme-text">
+              Change Theme
+            </span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="bd-theme">
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="light">
+              <i class="bi bi-sun-fill"></i>
+              Light
+            </button>
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="dark">
+              <i class="bi bi-moon-fill"></i>
+              Dark
+            </button>
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="auto">
+              <i class="bi bi-circle-half"></i>
+              Auto
+            </button>
+          </ul>
+        </div>
+      </div>
 
-      <div class="bd-theme nav-item dropdown ms-auto">
-        <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
-          aria-haspopup="true" aria-expanded="false">
-          <i class="theme-icon-active bi bi-circle-half"></i>
-          <span class="bd-theme-text">
-            Change Theme
-          </span>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="bd-theme">
-          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="light">
-            <i class="bi bi-sun-fill"></i>
-            Light
+      <p class="mt-3 mb-1">
+        Floating
+      </p>
+      <div class="p-3 text-end">
+        <div class="bd-theme dropup ms-auto">
+          <button class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="theme-icon-active bi bi-circle-half"></i>
+            <span class="bd-theme-text"></span>
           </button>
-          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="dark">
-            <i class="bi bi-moon-fill"></i>
-            Dark
-          </button>
-          <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="auto">
-            <i class="bi bi-circle-half"></i>
-            Auto
-          </button>
-        </ul>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="light">
+              <i class="bi bi-sun-fill"></i>
+              Light
+            </button>
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="dark">
+              <i class="bi bi-moon-fill"></i>
+              Dark
+            </button>
+            <button class="dropdown-item" aria-pressed="false" data-bs-theme-value="auto">
+              <i class="bi bi-circle-half"></i>
+              Auto
+            </button>
+          </ul>
+        </div>
       </div>
 
       <hr />

@@ -55,7 +55,8 @@
         activeThemeIcon.classList.remove(oldIconClass);
         activeThemeIcon.classList.add(iconClass);
       }
-      const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+
+      const themeSwitcherLabel = themeSwitcherText ? `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})` : btnToActive.dataset.bsThemeValue;
       themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
       if (focus) {
