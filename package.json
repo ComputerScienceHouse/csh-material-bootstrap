@@ -19,10 +19,10 @@
   "exports": {
     ".": {
       "sass": "./src/csh-material-bootstrap.scss",
-      "style": "dist/css/csh-material-bootstrap.min.css",
-      "css": "dist/css/csh-material-bootstrap.min.css"
+      "style": "./dist/css/csh-material-bootstrap.min.css",
+      "css": "./dist/css/csh-material-bootstrap.min.css"
     },
-    "./css": "dist/css/csh-material-bootstrap.min.css",
+    "./css": "./dist/css/csh-material-bootstrap.min.css",
     "./color-modes": "./dist/js/color-modes.js"
   },
   "scripts": {
