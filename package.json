@@ -34,7 +34,8 @@
     "css-lint-vars": "fusv scss/ site/src/scss/",
     "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
-    "js": "mkdir -p dist/js && cp src/color-modes.js dist/js/color-modes.js"
+    "js": "mkdir -p dist/js && cp src/color-modes.js dist/js/color-modes.js",
+    "prepare-s3-output": "mkdir -p s3-output && rm -r s3-output && mkdir s3-output && cp -r dist src index.html package.json README.md s3-output"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
