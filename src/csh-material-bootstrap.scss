@@ -3,3 +3,7 @@
 @import "variables";
 @import "variables-dark";
 @import "bootstrap/scss/bootstrap.scss";
+
+pre code button.-copy-btn {
+  transition: opacity 300ms; 
+}

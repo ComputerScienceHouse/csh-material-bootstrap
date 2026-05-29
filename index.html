@@ -87,7 +87,13 @@
           <div class="col-sm-6">
             <h2>Node Package</h2>
             <p>Recommended for modern web applications.</p>
-            <pre><code class="">npm install csh-material-bootstrap@%VITE_APP_VERSION%</code></pre>
+            <pre><code>npm install csh-material-bootstrap@%VITE_APP_VERSION%</code></pre>
+
+            <p>To include the js/css, you can link to them with the package exports. Bootstrap is a dependency of <code>csh-material-bootstrap</code>, so no need to install it independently</p>
+            <pre><code>// the css
+import 'csh-material-bootstrap/css'; 
+// bootstrap js, required for interactive functionality
+import 'bootstrap'; </code></pre>
           </div>
           <div class="col-sm-6">
             <h2>CDN</h2>
