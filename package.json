@@ -23,7 +23,7 @@
       "css": "./dist/css/csh-material-bootstrap.min.css"
     },
     "./css": "./dist/css/csh-material-bootstrap.min.css",
-    "./color-modes": "./dist/js/color-modes.js"
+    "./color-modes.js": "./dist/js/color-modes.js"
   },
   "scripts": {
     "compile": "npm-run-all --aggregate-output --parallel css js assets",
