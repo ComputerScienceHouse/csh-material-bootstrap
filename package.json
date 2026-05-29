@@ -35,7 +35,8 @@
     "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
     "js": "mkdir -p dist/js && cp src/color-modes.js dist/js/color-modes.js",
-    "prepare-s3-output": "mkdir -p s3-output && rm -r s3-output && mkdir s3-output && cp -r dist src index.html package.json README.md s3-output"
+    "prepare-s3-output": "mkdir -p s3-output && rm -r s3-output && mkdir s3-output && cp -r dist src index.html package.json README.md s3-output",
+    "dev-docs": "vite"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
@@ -46,7 +47,9 @@
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
+    "highlight.js": "^11.11.1",
     "npm-run-all2": "^8.0.4",
-    "sass": "^1.98.0"
+    "sass": "^1.98.0",
+    "vite": "^8.0.14"
   }
 }
