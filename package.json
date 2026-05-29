@@ -26,7 +26,7 @@
     "./color-modes": "./dist/js/color-modes.js"
   },
   "scripts": {
-    "compile": "npm-run-all --aggregate-output --parallel css js",
+    "compile": "npm-run-all --aggregate-output --parallel css js assets",
     "css": "npm-run-all css-compile css-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources -I node_modules --no-error-css src/:dist/css/",
     "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
@@ -35,8 +35,11 @@
     "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
     "js": "mkdir -p dist/js && cp src/color-modes.js dist/js/color-modes.js",
-    "prepare-s3-output": "mkdir -p s3-output && rm -r s3-output && mkdir s3-output && cp -r dist src index.html package.json README.md s3-output",
-    "dev-docs": "vite"
+    "assets": "mkdir -p dist/assets && cp src/soggycat.png dist/assets/soggycat.png",
+    "prepare-s3-output": "npm-run-all build-docs copy-s3-files",
+    "copy-s3-files": "cp -r dist src package.json README.md s3-output",
+    "dev-docs": "vite",
+    "build-docs": "vite build"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
