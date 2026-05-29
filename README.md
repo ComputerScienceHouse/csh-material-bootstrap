@@ -1,12 +1,12 @@
 CSH Material Bootstrap
 =======================
 
-A [Bootstrap](http://getbootstrap.com) material theme designed for use on [Computer Science House](http://csh.rit.edu) websites. Based on [Materia](https://bootswatch.com/materia) by [Bootswatch](https://bootswatch.com).
+A [Bootstrap](http://getbootstrap.com) material theme designed for use on [Computer Science House](http://csh.rit.edu) websites.
 
 Demo
 ----
 
-A live demo of this theme that showcases most components can be found [here](https://s3.csh.rit.edu/csh-material-bootstrap/4.3.1/index.html).
+A live demo of this theme that showcases most components can be found [here](https://s3.csh.rit.edu/csh-material-bootstrap/5.3.9/index.html).
 
 Usage
 ------
@@ -22,13 +22,15 @@ npm install --save csh-material-bootstrap
 You can then include the stylesheet into your bundled project:
 
 ```
-import 'csh-material-bootstrap/dist/csh-material-bootstrap.css';
+import 'csh-material-bootstrap/css';
 ```
 
 Or with SCSS:
 
 ```
-@import "node_modules/csh-material-bootstrap/src/csh-material-bootstrap.scss";
+@use 'pkg:csh-material-bootstrap';
+# or 
+@import 'csh-material-bootstrap'; # ??? idk I haven't tested this, use the @use one, @import is deprecated
 ```
 
 #### CDN
@@ -37,20 +39,23 @@ Use CSH Material Bootstrap without a package manager.
 ###### CSS
 
 ```
-<link rel="stylesheet" href="https://s3.csh.rit.edu/csh-material-bootstrap/4.3.1/dist/csh-material-bootstrap.min.css" media="screen">
+ <link rel="stylesheet" href="https://assets.csh.rit.edu/csh-material-bootstrap/5.3.9/dist/css/csh-material-bootstrap.min.css" media="screen">
 ```
 
-###### JS, Popper.js, and jQuery
+###### JS
 
 ```
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"></script>
 ```
+
+#### Themes
+To use different themes and enable theme switching on your website, you must include `colors-modes.js`. See [the website](https://assets.csh.rit.edu/csh-material-bootstrap/5.3.9/index.html#theme-switchers) for more details
 
 Development
 ------------
-You must have [Node 6 or higher](https://nodejs.org) and NPM or [Yarn](https://yarnpkg.com) installed.
+You must have [Node](https://nodejs.org) and NPM installed.
 
 Once you have those tools installed, clone this repo and run the following command to install dependencies:
 
@@ -58,14 +63,10 @@ Once you have those tools installed, clone this repo and run the following comma
 npm install
 ```
 
-Or, with Yarn:
+Once all of the dependencies are installed, run `npm compile` to build the stylesheet (artifacts will be dropped in `./dist`).
+If you wish to work on the docs, run `npm run dev-docs`, which will launch a websever with Vite on port 5173 to watch the changes. 
 
-```
-yarn
-```
-
-Once all of the dependencies are installed, run `npm build` to build the stylesheet (artifacts will be dropped in `./dist`), or `npm start` to watch the source files for development.
-
+NOTE: you have to recompile the styles any time you update that right now
 
 Contributing
 -------------
