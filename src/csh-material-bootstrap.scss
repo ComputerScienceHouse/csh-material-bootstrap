@@ -7,3 +7,7 @@
 pre code button.-copy-btn {
   transition: opacity 300ms; 
 }
+
+input.text-light::placeholder {
+  color: $gray-300;
+}

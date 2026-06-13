@@ -5,6 +5,7 @@ import 'highlight.js/styles/atom-one-dark.min.css';
 hljs.highlightAll();
 
 document.querySelectorAll("pre code").forEach((e) => {
+  e = e.parentElement;
   e.classList.add("position-relative");
 
   const copyButton = document.createElement("button");

@@ -94,6 +94,10 @@
 import 'csh-material-bootstrap/css'; 
 // bootstrap js, required for interactive functionality
 import 'bootstrap'; </code></pre>
+            <h5>Sass</h5>
+            <p>You can also import the sass directly in a <code>.scss</code> file, assuming your build tool will process our exports correctly</p>
+            <pre><code>@use 'pkg:csh-material-bootstrap';</pre></code>
+
           </div>
           <div class="col-sm-6">
             <h2>CDN</h2>
@@ -209,20 +213,20 @@ import 'bootstrap'; </code></pre>
           <div class="collapse navbar-collapse text-light" id="navbar-lg-1">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 link-muted">Overview</a>
+                <a href="#" class="nav-link px-2 link-light text-white-50">Overview</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a>
+                <a href="#" class="nav-link px-2 link-light">Inventory</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 link-body-emphasis">Customers</a>
+                <a href="#" class="nav-link px-2 link-light">Customers</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 link-body-emphasis">Products</a>
+                <a href="#" class="nav-link px-2 link-light">Products</a>
               </li>
             </ul>
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" class="form-control bg-primary border-primary-subtle" placeholder="Search..."
+              <input type="search" class="form-control bg-primary border-primary-subtle text-light" placeholder="Search..."
                 aria-label="Search">
             </form>
             <div class="dropdown text-end">
