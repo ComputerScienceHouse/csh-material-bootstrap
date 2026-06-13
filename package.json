@@ -39,7 +39,9 @@
     "prepare-s3-output": "npm-run-all build-docs copy-s3-files",
     "copy-s3-files": "cp -r dist src package.json README.md s3-output",
     "dev-docs": "vite",
-    "build-docs": "vite build"
+    "build-docs": "vite build",
+    "dev-compile": "nodemon --watch src -e js,scss --exec npm run compile",
+    "dev": "concurrently \"npm run dev-docs\" \"npm run dev-compile\""
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
@@ -50,7 +52,9 @@
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
+    "concurrently": "^10.0.3",
     "highlight.js": "^11.11.1",
+    "nodemon": "^3.1.14",
     "npm-run-all2": "^8.0.4",
     "sass": "^1.98.0",
     "vite": "^8.0.14"

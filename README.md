@@ -64,9 +64,8 @@ npm install
 ```
 
 Once all of the dependencies are installed, run `npm compile` to build the stylesheet (artifacts will be dropped in `./dist`).
-If you wish to work on the docs, run `npm run dev-docs`, which will launch a websever with Vite on port 5173 to watch the changes. 
-
-NOTE: you have to recompile the styles any time you update that right now
+If you wish to work on the docs, run `npm run dev`, which will launch a websever with Vite on port 5173 to watch the changes. 
+This uses `nodemon` to watch for css changes too, so you can update css without having to recompile!
 
 Contributing
 -------------
