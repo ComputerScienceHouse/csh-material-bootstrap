@@ -2,7 +2,10 @@
 
 @import "variables";
 @import "variables-dark";
+@import "bootstrap/scss/_variables.scss";
 @import "bootstrap/scss/bootstrap.scss";
+
+@import "sweetalert.scss";
 
 pre code button.-copy-btn {
   transition: opacity 300ms; 

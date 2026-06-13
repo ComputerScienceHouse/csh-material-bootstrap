@@ -310,6 +310,62 @@ import 'bootstrap'; </code></pre>
           </div>
         </div>
       </div>
+
+      <hr class="mt-4"/>
+
+      <!-- Sweet Alert 2 -->
+      <h2 id="sweet-alert">Sweet Alert 2</h2>
+
+      <p>
+        To use sweet alert 2 to get fancy alerts, you must install the <a href="https://sweetalert2.github.io/">Sweet alert 2</a> package.
+        CSH bootstrap contains styles to make sweetalert2 alerts match with our bootstrap. It's worth noting that sweetalert2 does have a 
+        bootstrap-5 theme, but it does not respect bootstrap-5 variables ):
+      </p>
+
+      <div class="m-4 text-center">
+        <button class="btn btn-primary" onclick="showAlert()">Try Me!</button>
+      </div>
+
+      <p>
+        The buttons are not styled automatically, because sweet alert lets you provide custom classes using <code>customClass</code>
+        the above alert was styled this way, called with the code below.
+      </p>
+      <pre><code>Swal.fire({
+  title: "It works!",
+  theme: 'bootstrap-5',
+  icon: "success",
+  text: "Own'er? I barely know her",
+  showCloseButton: true,
+  showCancelButton: true,
+  reverseButtons: true,
+  customClass: {
+    cancelButton: "btn btn-danger",
+    confirmButton: "btn btn-primary"
+  }
+});</code></pre>
+
+      <p>
+        However, you can also define a custom object to replace the <code>Swal</code> object that overrides these classes.
+        That way you don't have to define it every time.
+      </p>
+
+      <pre><code>bsSwal = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger"
+  }
+});
+
+bsSwal.fire({
+  title: "It works!",
+  theme: 'bootstrap-5',
+  icon: "success",
+  text: "Own'er? I barely know her",
+  showCloseButton: true,
+  showCancelButton: true,
+  reverseButtons: true
+});</code></pre>
+
     </div>
   </div>
 
