@@ -6,7 +6,7 @@ A [Bootstrap](http://getbootstrap.com) material theme designed for use on [Compu
 Demo
 ----
 
-A live demo of this theme that showcases most components can be found [here](https://s3.csh.rit.edu/csh-material-bootstrap/5.3.9/index.html).
+A live demo of this theme that showcases most components can be found [here](https://s3.csh.rit.edu/csh-material-bootstrap/5.3.10/index.html).
 
 Usage
 ------
@@ -31,6 +31,7 @@ Or with SCSS:
 @use 'pkg:csh-material-bootstrap';
 # or 
 @import 'csh-material-bootstrap'; # ??? idk I haven't tested this, use the @use one, @import is deprecated
+
 ```
 
 #### CDN
@@ -39,7 +40,7 @@ Use CSH Material Bootstrap without a package manager.
 ###### CSS
 
 ```
- <link rel="stylesheet" href="https://assets.csh.rit.edu/csh-material-bootstrap/5.3.9/dist/css/csh-material-bootstrap.min.css" media="screen">
+ <link rel="stylesheet" href="https://assets.csh.rit.edu/csh-material-bootstrap/5.3.10/dist/css/csh-material-bootstrap.min.css" media="screen">
 ```
 
 ###### JS
@@ -51,7 +52,7 @@ Use CSH Material Bootstrap without a package manager.
 ```
 
 #### Themes
-To use different themes and enable theme switching on your website, you must include `colors-modes.js`. See [the website](https://assets.csh.rit.edu/csh-material-bootstrap/5.3.9/index.html#theme-switchers) for more details
+To use different themes and enable theme switching on your website, you must include `colors-modes.js`. See [the website](https://assets.csh.rit.edu/csh-material-bootstrap/5.3.10/index.html#theme-switchers) for more details
 
 Development
 ------------

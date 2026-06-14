@@ -1,7 +1,7 @@
 {
   "name": "csh-material-bootstrap",
   "description": "A material design Bootstrap theme for Computer Science House.",
-  "version": "5.3.9",
+  "version": "5.3.10",
   "author": "Computer Science House <webmaster@csh.rit.edu>",
   "homepage": "https://csh.rit.edu",
   "license": "MIT",
@@ -51,8 +51,6 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "@liedekef/fdatepicker": "^3.0.45",
-    "air-datepicker": "^3.6.0",
     "clean-css-cli": "^5.6.3",
     "concurrently": "^10.0.3",
     "highlight.js": "^11.11.1",
