@@ -5,6 +5,9 @@ import 'highlight.js/styles/atom-one-dark.min.css';
 
 import Swal from 'sweetalert2';
 
+import { Datepicker } from 'vanillajs-datepicker';
+import 'vanillajs-datepicker/css/datepicker-bs5.css';
+
 hljs.highlightAll();
 
 // copy code button
@@ -63,6 +66,14 @@ document.querySelectorAll("h2[id]").forEach((e) => {
     await navigator.clipboard.writeText(window.location.href);
   });
 });
+
+const datepickerEl = document.querySelector('input#datepickerDemo');
+const datepicker = new Datepicker(datepickerEl, {
+  buttonClass: 'btn',
+  todayButton: true,
+  clearButton: true
+});
+
 
 // swal2 alert
 window.showAlert = function() {

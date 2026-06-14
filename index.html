@@ -313,6 +313,41 @@ import 'bootstrap'; </code></pre>
 
       <hr class="mt-4"/>
 
+      <!-- Datepicker -->
+      <h2 id="air-datepicker">Vanillajs Datepicker</h2>
+
+      <p>
+        To use <a href="https://mymth.github.io/vanillajs-datepicker/#/"><code>vanillajs-datepicker</code></a> 
+        as a fancy datepicker instead of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/date">default one in a browser</a>,
+        <a href="https://mymth.github.io/vanillajs-datepicker/#/?id=quick-start">install the package</a> and bootstrap css
+        will do the rest. You must set <code>buttonClass: "btn"</code> when initializing the datepicker!
+      </p>
+
+      <pre><code>// js
+import { Datepicker } from 'vanillajs-datepicker';
+import 'vanillajs-datepicker/css/datepicker-bs5.css';
+
+const datepickerEl = document.querySelector('input#datepickerDemo');
+const datepicker = new Datepicker(datepickerEl, {
+  buttonClass: 'btn',
+  todayButton: true,
+  clearButton: true
+});</code></pre>
+
+      <pre><code>&lt;!-- demo html, does NOT have to be exactly this to funciton, you just need an id on an input. --&gt;
+&lt;form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 input-group"&gt;
+  &lt;span class="input-group-text" id="datepickerDemoLabel"&gt;Demo Date&lt;/span&gt;
+  &lt;input type="text" id="datepickerDemo" class="form-control bg-body-tertiary" aria-describedby="datepickerDemoLabel"&gt;
+&lt;/form&gt;</code></pre>
+
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 input-group">
+        <span class="input-group-text" id="datepickerDemoLabel">Demo Date</span>
+        <input type="text" id="datepickerDemo" class="form-control bg-body-tertiary" aria-describedby="datepickerDemoLabel">
+      </form>
+
+      <hr class="mt-4"/>
+
       <!-- Sweet Alert 2 -->
       <h2 id="sweet-alert">Sweet Alert 2</h2>
 
