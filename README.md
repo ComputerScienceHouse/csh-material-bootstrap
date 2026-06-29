@@ -6,7 +6,7 @@ A [Bootstrap](http://getbootstrap.com) material theme designed for use on [Compu
 Demo
 ----
 
-A live demo of this theme that showcases most components can be found [here](https://s3.csh.rit.edu/csh-material-bootstrap/5.3.10/index.html).
+A live demo of this theme that showcases most components can be found [here](https://assets.csh.rit.edu/csh-material-bootstrap/5.3.10/index.html).
 
 Usage
 ------

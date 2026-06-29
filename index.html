@@ -142,7 +142,7 @@ import 'bootstrap'; </code></pre>
       <p class="mb-1">
         In a navbar
       </p>
-      <div class="bg-primary p-3">
+      <div class="bg-primary p-3" id="theme-nav-demo">
         <div class="bd-theme nav-item dropdown ms-auto">
           <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="button"
             aria-haspopup="true" aria-expanded="false">
@@ -171,7 +171,7 @@ import 'bootstrap'; </code></pre>
       <p class="mt-3 mb-1">
         Floating
       </p>
-      <div class="p-3 text-end">
+      <div class="p-3 text-end" id="theme-floating-demo">
         <div class="bd-theme dropup ms-auto">
           <button class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" role="button"
             aria-haspopup="true" aria-expanded="false">
@@ -194,13 +194,25 @@ import 'bootstrap'; </code></pre>
           </ul>
         </div>
       </div>
+      
+      <div class="d-flex justify-content-end mx-2 my-4">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#theme-code-collapse" 
+          aria-expanded="false" aria-controls="#theme-code-collapse" title="Show code!">
+          <i class="bi bi-code-slash"></i>
+        </button>
+      </div>
+
+      <div class="collapse" id="theme-code-collapse">
+        <pre><code data-code-demo="theme-nav-demo" data-code-label="In a Navbar"></code></pre>
+        <pre><code data-code-demo="theme-floating-demo" data-code-label="Floating"></code></pre>
+      </div>
 
       <hr />
 
       <!-- Navbars -->
       <h2 id="navbars" class="my-3">Navbars</h2>
 
-      <div class="navbar navbar-expand-lg bg-primary navbar-fixed-top my-2">
+      <div class="navbar navbar-expand-lg bg-primary navbar-fixed-top my-2" id="navbar-primary">
         <div class="container-lg">
           <a href="#" class="navbar-brand fs-4 text-light">
             <img class="object-fit-contain ms-2 me-2" height="32"
@@ -256,7 +268,7 @@ import 'bootstrap'; </code></pre>
         </div>
       </div>
 
-      <div class="navbar navbar-expand-lg bg-body-secondary navbar-fixed-top my-2">
+      <div class="navbar navbar-expand-lg bg-body-secondary navbar-fixed-top my-2" id="navbar-low-contrast">
         <div class="container-lg">
           <a href="#" class="navbar-brand fs-4">
             <img class="object-fit-contain ms-2 me-2" height="32"
@@ -310,6 +322,19 @@ import 'bootstrap'; </code></pre>
           </div>
         </div>
       </div>
+      
+      <div class="d-flex justify-content-end mx-2 my-4">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#navbar-code-collapse" 
+          aria-expanded="false" aria-controls="#theme-code-collapse" title="Show code!">
+          <i class="bi bi-code-slash"></i>
+        </button>
+      </div>
+
+      <div class="collapse" id="navbar-code-collapse">
+        <pre><code data-code-demo="navbar-primary" data-code-label="CSH Colored Navbar"></code></pre>
+        <pre><code data-code-demo="navbar-low-contrast" data-code-label="Lower Contrast Header"></code></pre>
+      </div>
+
 
       <hr class="mt-4"/>
 

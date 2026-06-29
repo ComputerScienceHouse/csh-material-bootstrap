@@ -1,12 +1,27 @@
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.min.css';
-// import 'highlight.js/styles/default.min.css';
-// import 'sweetalert2/themes/bootstrap-5.css';
+
+import { html_beautify } from "js-beautify"
 
 import Swal from 'sweetalert2';
 
 import { Datepicker } from 'vanillajs-datepicker';
 import 'vanillajs-datepicker/css/datepicker-bs5.css';
+
+document.querySelectorAll("pre code[data-code-demo]").forEach((e) => {
+  const targetEl = document.getElementById(e.getAttribute("data-code-demo"));
+
+  e.classList.add("language-html");
+
+  let htmlText = html_beautify(targetEl.innerHTML, { indent_size: 2 });
+
+  if (e.hasAttribute("data-code-label")) {
+    htmlText = `<!-- ${e.getAttribute("data-code-label")} -->\n${htmlText}`;
+  }
+
+  e.textContent = htmlText;
+})
+
 
 hljs.highlightAll();
 
