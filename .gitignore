@@ -102,6 +102,9 @@ typings/
 
 # dotenv environment variables file
 .env
+.secrets
 
 # JetBrains
 .idea
+
+s3-output

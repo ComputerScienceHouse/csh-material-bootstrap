@@ -1,0 +1,41 @@
+div.datepicker .datepicker-picker {
+  background-color: var(--bs-tertiary-bg);
+
+  .datepicker-footer {
+    // bro why is it set on this guy too?
+    background-color: var(--bs-tertiary-bg);
+
+    .btn:hover {
+      background-color: var(--bs-secondary-bg);
+    }
+  }
+
+  .datepicker-controls {
+    .btn {
+      background-color: inherit;
+      border: inherit;
+
+      &:hover {
+        color: var(--bs-secondary-color);
+      }
+    }
+
+  }
+
+  .datepicker-grid {
+    .datepicker-cell {
+      &.focused, &.focused:hover {
+        background-color: var(--bs-primary-bg-subtle);
+      }
+
+      &.selected, &.selected:not(.disabled):hover {
+        background-color: var(--bs-primary);
+      }
+
+      &:not(.disabled):hover {
+        background-color: var(--bs-secondary-bg);
+        // color: 
+      }
+    }
+  }
+}

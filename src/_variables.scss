@@ -1,135 +1,14 @@
-// CSH Material Bootstrap 4.5.2
-// Based on Bootswatch Materia
+// @import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/functions";
 
-// Color system ================================================================
+$purple: #b0197e;
+$pink: #e11c52;
 
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #eee !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #bbb !default;
-$gray-600: #666 !default;
-$gray-700: #444 !default;
-$gray-800: #222 !default;
-$gray-900: #212121 !default;
-$black:    #000 !default;
+$pink-600: mix(#fff, $pink, 20%);
 
-$blue:    #2196F3 !default;
-$indigo:  #6610f2 !default;
-$purple:  #b0197e !default;
-$pink:    #e83e8c !default;
-$red:     #e51c23 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ff9800 !default;
-$green:   #4CAF50 !default;
-$teal:    #20c997 !default;
-$cyan:    #9C27B0 !default;
+$primary: $purple;
+$secondary: $pink-600;
 
-$primary:   $purple !default;
-$secondary: $white !default;
-$success:   $green !default;
-$info:      $blue !default;
-$warning:   $yellow !default;
-$danger:    $red !default;
-$light:     $white !default;
-$dark:      $gray-800 !default;
+$primary-border-subtle: tint-color($primary, 40%);
 
-$yiq-contrasted-threshold:  170 !default;
-
-$enable-gradients: true !default;
-
-// Body ========================================================================
-
-$body-color: $gray-700 !default;
-
-// Fonts =======================================================================
-
-$font-family-sans-serif:  "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-size-base:          0.8125rem !default;
-$font-weight-base:        400 !default;
-
-// Buttons =====================================================================
-
-$input-btn-padding-y: 0.5rem !default;
-$input-btn-padding-x: 1rem !default;
-
-// Forms =======================================================================
-
-$input-padding-y: 1rem !default;
-$input-padding-x: 0 !default;
-
-$input-padding-y-sm: 0 !default;
-$input-padding-x-sm: 0 !default;
-
-$input-padding-y-lg: ($font-size-base * 1.25) !default;
-$input-padding-x-lg: 0 !default;
-
-$input-bg:          transparent !default;
-$input-disabled-bg: transparent !default;
-
-$input-color:         $gray-600 !default;
-$input-border-color:  transparent !default;
-$input-border-width:  0 !default;
-
-$input-border-radius:     0 !default;
-$input-border-radius-lg:  0 !default;
-$input-border-radius-sm:  0 !default;
-
-$input-placeholder-color: rgba(0,0,0,0.4) !default;
-
-$input-group-addon-bg: transparent !default;
-
-$custom-control-gutter: 1.75rem !default;
-
-$custom-control-indicator-focus-box-shadow: 0 !default;
-
-$custom-control-indicator-size:           1.25rem !default;
-$custom-control-indicator-bg:             $white;
-$custom-checkbox-indicator-border-radius: 2px !default;
-
-$custom-control-indicator-disabled-bg: $gray-100 !default;
-
-$custom-radio-indicator-icon-checked: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='4' fill='#{$primary}'/%3E%3C/svg%3E") !default;
-
-$custom-select-border-radius: 0 !default;
-$custom-select-box-shadow:    none !default;
-
-// Navs ========================================================================
-
-$nav-link-disabled-color: $gray-500 !default;
-$nav-tabs-link-active-bg: transparent !default;
-
-$nav-tabs-border-color: transparent !default;
-
-// Navbars =====================================================================
-
-$navbar-dark-color:       rgba($white,.75) !default;
-$navbar-dark-hover-color: $white !default;
-
-$navbar-logo: url('data:image/svg+xml;utf8,<svg width="66" height="66" xmlns="http://www.w3.org/2000/svg"><g fill="%23000" fill-rule="evenodd"><path d="M51.294 18.591V5.841c0-2.012-1.64-3.643-3.664-3.643H3.664C1.64 2.198 0 3.83 0 5.841v56.465c0 2.012 1.64 3.643 3.664 3.643H47.63c2.023 0 3.664-1.631 3.664-3.643v-12.75H40.302v3.643c0 1.006-.82 1.821-1.832 1.821H12.823a1.827 1.827 0 0 1-1.832-1.821v-38.25c0-1.006.82-1.822 1.832-1.822H38.47c1.012 0 1.832.816 1.832 1.821v3.643h10.992z"/><path d="M35.722 16.77h-20.15a.913.913 0 0 0-.917.91v19.126c0 .503.41.91.916.91h12.366c.253 0 .458.204.458.456v5.464a.457.457 0 0 1-.458.455h-4.58a.457.457 0 0 1-.458-.455V41.36h-8.244v9.108c0 .503.41.91.916.91h20.151a.913.913 0 0 0 .916-.91V31.34c0-.503-.41-.91-.916-.91H23.357a.457.457 0 0 1-.458-.456v-5.464c0-.251.205-.455.458-.455h4.58c.253 0 .458.204.458.455v2.277h8.243V17.68c0-.503-.41-.91-.916-.91zM51.294 38.627v7.286H40.302V22.234h10.992v7.286h3.663V2.198H65.95v63.75H54.957v-27.32h-3.663z"/></g></svg>') !default;
-
-$navbar-logo-white: url('data:image/svg+xml;utf8,<svg width="66" height="66" xmlns="http://www.w3.org/2000/svg"><g fill="%23F5F5F5" fill-rule="evenodd"><path d="M51.294 18.591V5.841c0-2.012-1.64-3.643-3.664-3.643H3.664C1.64 2.198 0 3.83 0 5.841v56.465c0 2.012 1.64 3.643 3.664 3.643H47.63c2.023 0 3.664-1.631 3.664-3.643v-12.75H40.302v3.643c0 1.006-.82 1.821-1.832 1.821H12.823a1.827 1.827 0 0 1-1.832-1.821v-38.25c0-1.006.82-1.822 1.832-1.822H38.47c1.012 0 1.832.816 1.832 1.821v3.643h10.992z"/><path d="M35.722 16.77h-20.15a.913.913 0 0 0-.917.91v19.126c0 .503.41.91.916.91h12.366c.253 0 .458.204.458.456v5.464a.457.457 0 0 1-.458.455h-4.58a.457.457 0 0 1-.458-.455V41.36h-8.244v9.108c0 .503.41.91.916.91h20.151a.913.913 0 0 0 .916-.91V31.34c0-.503-.41-.91-.916-.91H23.357a.457.457 0 0 1-.458-.456v-5.464c0-.251.205-.455.458-.455h4.58c.253 0 .458.204.458.455v2.277h8.243V17.68c0-.503-.41-.91-.916-.91zM51.294 38.627v7.286H40.302V22.234h10.992v7.286h3.663V2.198H65.95v63.75H54.957v-27.32h-3.663z"/></g></svg>') !default;
-
-// Cards =======================================================================
-
-$card-border-width: 0;
-$card-border-color: transparent;
-
-// Tooltips ====================================================================
-
-$tooltip-bg: $gray-700 !default;
-
-// Modals ======================================================================
-
-$modal-content-border-color: transparent !default;
-
-// Progress Bars ===============================================================
-
-$progress-height:         0.375rem !default;
-$progress-border-radius:  0 !default;
-
-// Close =======================================================================
-
-$close-font-size:   2.125rem !default;
-$close-font-weight: 300 !default;
+$font-size-base: 0.9rem;
