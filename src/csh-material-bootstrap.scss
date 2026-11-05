@@ -1,5 +1,7 @@
 // CSH Material Bootstrap 5.3.8
 
+@use "sass:meta";
+
 @import "variables";
 @import "variables-dark";
 @import "bootstrap/scss/_variables.scss";
@@ -14,4 +16,12 @@ pre code button.-copy-btn {
 
 input.text-light::placeholder {
   color: $gray-300;
+}
+
+html[data-bs-theme="light"] {
+  @include meta.load-css("highlight.js/styles/default.min.css");
+}
+
+html[data-bs-theme="dark"] {
+  @include meta.load-css("highlight.js/styles/atom-one-dark.min.css");
 }

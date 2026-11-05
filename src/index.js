@@ -1,5 +1,4 @@
 import hljs from 'highlight.js';
-import 'highlight.js/styles/atom-one-dark.min.css';
 
 import { html_beautify } from "js-beautify"
 
